@@ -168,7 +168,7 @@ if(isNaN(age) ){
     console.log ("you should exercise");
 }
 
-
+*/
 
 //html in javascript 아주 중요한 개념 !
 const title = document.getElementById("title");
@@ -183,23 +183,23 @@ const hello = document.getElementsByClassName("hi");
 console.log(hello);
 
 
-*/
+
 //div 안에 있는 h1 가져오기
 
 const title = document.getElementsByTagName("h1");
-/*
+
 console.log(h1);
-*/
+
 
 //querySelector
 
 const selector = document.querySelector(".title h1");
                                     // .className, tag 명시
-/*
+
 //javascript에서 스타일 변경
 
 selector.style.color= "white";
-*/
+
 // 사용 가능 event 보기 
 console.dir(selector); 
 
