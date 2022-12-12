@@ -151,18 +151,18 @@ const divideResult = caluator.divide(timesResult,plusResult);
 
 
 //type 변경 
-const age = parseInt(prompt("How old are you?"));
+const age1 = parseInt(prompt("How old are you?"));
 
-console.log(age);
+console.log(age1);
 
 //조건문
 
 
-if(isNaN(age) ){
+if(isNaN(age1) ){
     console.log("Please write a number");
-} else if(age < 18){
+} else if(age1 < 18){
     console.log("you are too young");
-} else if (age >= 18 && age <= 50) {
+} else if (age1 >= 18 && age1 <= 50) {
     console.log("you can drink");
 } else {
     console.log ("you should exercise");
