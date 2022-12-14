@@ -1,5 +1,9 @@
 
 
+body {
+    font-family: 'Chivo Mono', monospace;
+}
+
 .hidden {
     display: none;
 }
