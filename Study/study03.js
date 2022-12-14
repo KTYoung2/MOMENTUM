@@ -68,14 +68,18 @@ function loginSub(event){
     //username 저장 (localStorge)
     localStorage.setItem(USERNAME_KEY,username);
                         // "key"   , values   
+    paintGreetings(username);
+}
+
+
+//코드 반복되니 함수화시킴
+function paintGreetings(username){
     greeting.innerText = `Welcom ${username}`;
                         /* `${변수명}` 1.변수와 string을 결합하고 싶을때
                                        2.변수를 string 안에 집어넣고 싶을 때
-                                       ※ '' 싱글코트가 아닌 `` 백틱 기호임  */                    
+                                       ※ '' 싱글코트가 아닌 `` 백틱 기호임  */    
     greeting.classList.remove(HIDDEN_CLASSNAME);
-
 }
-
 
 
 //유저 정보 유무 확인
@@ -90,6 +94,6 @@ if(savedUserName === null){
     loginForm.addEventListener("submit",loginSub);
 } else{
     //회원 정보를 기억한채 h1 환영문구 보여주기 
-    greeting.innerText = `Welcom ${savedUserName}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreetings(savedUserName);
+                // 함수를 호출하는 위치에따라 유저정보(Argument) 바꿔주기
 }
