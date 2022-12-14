@@ -8,10 +8,23 @@
     <title>Study App</title>
 </head>
 <body>
-<div class="login-form">
+<!--<div class="login-form">
     <input type="text" placeholder="What's your name?" />
     <button> Login</button>
-</div>
+</div>-->
+<!--input의 유효성 검사를 작동시키기 위해선 input을 form안에 위치-->
+    <form id="login-form" class="hidden">
+        <input 
+        required 
+        maxlength="15"
+        type="text"
+        placeholder="What's your name"
+        />
+        <input type="submit" value="Login"/>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+
+    <!--<a href="https://github.com/KTYoung2"> Welcom 02's github </a>-->
     <script src="/Study/study03.js"></script>
 </body>
 
