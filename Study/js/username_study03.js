@@ -65,7 +65,7 @@ function loginSub(event){
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-    //username 저장 (localStorge)
+    //username 저장 (localStorge) : 브라우저 API (작은 DB라고 생각)
     localStorage.setItem(USERNAME_KEY,username);
                         // "key"   , values   
     paintGreetings(username);
