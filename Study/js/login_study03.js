@@ -67,18 +67,17 @@ function loginSub(event){
     const username = loginInput.value;
     //username 저장 (localStorge) : 브라우저 API (작은 DB라고 생각)
     localStorage.setItem(USERNAME_KEY,username);
-                        // "key"   , values   
     paintGreetings(username);
 }
 
-
 //코드 반복되니 함수화시킴
 function paintGreetings(username){
-    greeting.innerText = `Welcom ${username}`;
-                        /* `${변수명}` 1.변수와 string을 결합하고 싶을때
-                                       2.변수를 string 안에 집어넣고 싶을 때
-                                       ※ '' 싱글코트가 아닌 `` 백틱 기호임  */    
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    greeting.innerText = `Hello ${username}`;
+                    /* `${변수명}` 1.변수와 string을 결합하고 싶을때
+                                   2.변수를 string 안에 집어넣고 싶을 때
+                                   ※ '' 싱글코트가 아닌 `` 백틱 기호임  */    
+    
+         greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 
@@ -97,3 +96,4 @@ if(savedUserName === null){
     paintGreetings(savedUserName);
                 // 함수를 호출하는 위치에따라 유저정보(Argument) 바꿔주기
 }
+            

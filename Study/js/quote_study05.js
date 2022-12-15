@@ -1,4 +1,4 @@
-//명언 랜덤
+
 const quotes = [
 {
     quote: "The endeavor to understand is the first and only basis of virtue.",
@@ -38,12 +38,31 @@ const quotes = [
 },
 {
     quote:"Feminism is for everybody.",
-    author:"Bell hooks"
-}
-
+    author:"Bell hooks",
+},
 ];
 
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
 
-console.log(quotes[0]);
+
+//array 안에 있는 element 접근하기 (array 길이를 알아야함)
+// console.log(quotes[10-1]); 컴퓨터는 0부터 읽으니까 하나를 빼줘야함
+
+/* array 길이인 10사이의 숫자 접근 (0~9까지)
+    --> Math module
+    Math.random() : 0부터 1사이의 랜덤숫자 제공 (float)
+    Math.round() : 소숫점 반올림 
+    Math.ceil() : 소숫점 올림
+    Math.floor() : 소숫점 내림   
+*/
+
+            /* 명언을 추가하면 또 숫자를 구해야하는데 매번 그럴 수 없으니
+                array 길이를 구하는 게 좋음 ( .length ) */
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
+
+
+
