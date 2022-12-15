@@ -12,3 +12,4 @@ const bgImg = document.createElement("img");
 bgImg.src = `/Study/img/${randomImg}`;
 
 document.body.appendChild(bgImg);
+//append -> 가장 끝에 설정 prepend -> 가장 위쪽에 설정
