@@ -2,12 +2,14 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];   //배열은 localStorge저장 안됨
+const TODOS_KEY = "todos";
+
+let toDos = [];   //배열은 localStorge저장 안됨
 
 //투두리스트 저장 함수
 function saveTodos() {
                 //JSON.stringify : js object, array 그외 어떤것이든 string으로 바꿔줌
-    localStorage.setItem("todos", JSON.stringify(toDos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 //버튼 투드 리스트 삭제 기능 함수
@@ -45,3 +47,14 @@ function toDoSub(event){
 }
 
 toDoForm.addEventListener("submit", toDoSub);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+//투두리스트 저장 함수
+if(savedToDos !== null ){
+                    //js에서 사용가능한 object
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    // array 각 item 하나마다 function 실행을 할 수 있음
+    parsedToDos.forEach(paintToDo);
+}
