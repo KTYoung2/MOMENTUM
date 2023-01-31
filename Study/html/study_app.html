@@ -15,6 +15,7 @@
     <button> Login</button>
 </div>-->
 <!--input의 유효성 검사를 작동시키기 위해선 input을 form안에 위치-->
+<div class="login">
     <form id="login-form" class="hidden">
         <input 
         required 
@@ -24,18 +25,25 @@
         />
         <input type="submit" value="Login"/>
     </form>
+</div>
+<div class="clock_change">
     <h2 id="clock">00 : 00 : 00</h2>
     <h1 id="greeting" class="hidden"></h1>
     <!--form태그 자체가 submit이 디폴트-->
+</div>    
+<div>
     <form id="todo-form">
         <input type="text" placeholder="Write a TO DO and Press Enter" required />
     </form>
+</div>
     <!--js로 li추가-->
+    <div>
     <ul id="todo-list"></ul>
     <div id="quote">
         <span></span>
         <span></span>
     </div>
+</div>
     <div id="weather">
         <span></span>
         <span></span>
