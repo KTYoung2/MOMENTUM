@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Study/css/study_style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="/Study/img/favicon (1).ico"/>
     <title>Study App</title>
 </head>
@@ -15,15 +14,17 @@
     <button> Login</button>
 </div>-->
 <!--input의 유효성 검사를 작동시키기 위해선 input을 form안에 위치-->
+<div class="crome_contanier">
 <div class="login">
     <form id="login-form" class="hidden">
         <input 
+        class="login_name"
         required 
         maxlength="15"
         type="text"
-        placeholder="What's your name"
+        placeholder="What's your name?"
         />
-        <input type="submit" value="Login"/>
+        <input class="submit" type="submit" value="Login"/>
     </form>
 </div>
 <div class="clock_change">
@@ -31,23 +32,27 @@
     <h1 id="greeting" class="hidden"></h1>
     <!--form태그 자체가 submit이 디폴트-->
 </div>    
-<div>
+<div class="todo">
     <form id="todo-form">
-        <input type="text" placeholder="Write a TO DO and Press Enter" required />
+        <h1>TO DO LIST</h1>
+        <input class="todo_enter" type="text" placeholder="Write a TO DO" required />
+        <input class="submit" type="submit" value="add"/>
     </form>
-</div>
     <!--js로 li추가-->
-    <div>
-    <ul id="todo-list"></ul>
+    <ul id="todo-list">
+        <div class="checkbox"></div>
+    </ul>
+    </div>
     <div id="quote">
         <span></span>
         <span></span>
     </div>
-</div>
     <div id="weather">
         <span></span>
         <span></span>
     </div>
+<div id="img"></div>
+</div>
     <!--<a href="https://github.com/KTYoung2"> Welcom 02's github </a>-->
     <script src="/Study/js/login_study03.js"></script>
     <script src="/Study/js/clock_study04.js"></script>

@@ -48,7 +48,7 @@ function paintToDo(newTodo) {
    const span = document.createElement("span");
    span.innerText = newTodo.text;   
    const button = document.createElement("button");
-   button.innerText = "❌";
+   button.innerHTML = "✔️";
    button.addEventListener("click", delTodo);
    //li안에 span, button 자식요소 설정하기
    li.appendChild(span);
