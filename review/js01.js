@@ -44,7 +44,7 @@ console.log(amISkinny);
  
     null : 변수는 있지만 값엔 아무 것도 없는 상태로 채워진 것
     -------> null은 자연적으로 발생하지 않음( 변수에 값 없다는걸 확인하기 위해 쓰는 용도)
-    undefined : 변수는 존재하는데 값을 정의하지(들어가있지) 않는 것
+    undefined : 변수는 존재하는데 값을 부여하지 않는 것
 
  */
 
@@ -65,7 +65,8 @@ const 변수 = [값, 값, 값];
 const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"];
 
 //데이터 타입이 다른 것들도 배열화 시킬 수 있음
-const nothing = [1, 2, null, true, "hello", 0.5];
+const me = "young";
+const nothing = [1, 2, null, true, "hello", 0.5, me];
 
 console.log(daysOfWeek);
 
@@ -76,6 +77,7 @@ console.log(nothing);
     ** 컴퓨터는 0부터 시작
 */
 console.log(daysOfWeek[0]);
+
 
 //기존 배열에 아이템 추가하기 변수.push
 daysOfWeek.push("sun");
