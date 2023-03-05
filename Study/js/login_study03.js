@@ -72,7 +72,8 @@ function loginSub(event){
 
 //코드 반복되니 함수화시킴
 function paintGreetings(username){
-    greeting.innerText = `Hello ${username} 👋`;
+    greeting.innerText = `Have a Nice Today
+                          ${username} 👋`;
                     /* `${변수명}` 1.변수와 string을 결합하고 싶을때
                                    2.변수를 string 안에 집어넣고 싶을 때
                                    ※ '' 싱글코트가 아닌 `` 백틱 기호임  */    

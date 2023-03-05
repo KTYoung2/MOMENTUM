@@ -123,6 +123,7 @@ console.log(player);
 /* 
 
 function 
+: 코드를 캡슐화 해서 그걸 계속 반복해서 사용할 수 있도록 한 것.
 
 function 함수이름(함수 내부로 전달 받은 변수 이름 -> 매개변수1((parameter)),매개변수2) {
     ** 변수는 function body 내에만 존재

@@ -1,6 +1,6 @@
 //랜덤 배경화면 
 
-const images = ["back_img01.png","back_img02.png","back_img03.jpg"];
+const images = ["back_img01.png","back_img02.jpg","back_img03.jpg"];
 
 const randomImg = images[Math.floor(Math.random() * images.length)];
 

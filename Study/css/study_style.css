@@ -6,9 +6,8 @@
 }
 
 img {
+    width:100vw;
     position:absolute;
-    width:100%;
-    height:100%;
     left: 0px;
     top: 0px;
     right:0px;
@@ -17,10 +16,10 @@ img {
     opacity:80%;
 }
 
-
 body {
+    width:100vw;
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;    
 }
 
 .crome_contanier {
@@ -28,6 +27,7 @@ body {
     flex-direction:column; 
     justify-content: space-around;
     align-items: center;
+
 }
 
 
@@ -39,9 +39,10 @@ body {
 .login_name {
     font-family: 'Poppins', sans-serif;
     border:none;
-    border-bottom: 2px solid rgb(195, 172, 208);
-    padding: 20px 20px 20px;
     outline: none;  
+    height: 10px;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    padding: 20px 20px 20px;
     font-size: 16px;
 }
 
@@ -49,7 +50,7 @@ body {
 .submit {
     font-family: 'Poppins', sans-serif;
     width: 100px;
-    height: 60px;
+    height: 40px;
     border:none;
     outline: none;  
     border-radius: 5px;
@@ -74,10 +75,19 @@ body {
 }
 
 #greeting {
-    font-size: 50px;
-    color: rgb(195, 172, 208);
+    font-size: 35px;
+    color:rgb(103, 65, 136);
+}
+
+
+h1 {
+  color:rgb(103, 65, 136);
+  font-weight:bold;
+  font-size: 40px;
+  text-align:center;
 
 }
+
 
 .todo {
     display: flex;
@@ -86,8 +96,8 @@ body {
     overflow: hidden;
     width: 440px;
     height:640px;
-    border: 2px solid rgb(255, 251, 245);
-    background: rgb(255, 251, 245);
+    background-color: rgba( 255, 255, 255, 0.5 );
+    padding: 20px 20px 20px;
     border-radius: 10px;
     padding: 30px;
 
@@ -95,13 +105,13 @@ body {
 
 .todo_enter {
     font-family: 'Poppins', sans-serif;
-    padding: 10px;
-    width: 200px;
-    height: 40px;
-    border: none;
+    border:none;
     outline: none;  
+    height: 10px;
+    width: 200px;
+    background-color: rgba( 255, 255, 255, 0.7 );
+    padding: 20px 20px 20px;
     font-size: 16px;
-    background:white;  
 }
 
 #todo-list {
@@ -109,8 +119,7 @@ body {
     list-style: none;
     width: 340px;
     height: 440px;
-    border: 2px solid rgb(195, 172, 208);
-    background: rgb(195, 172, 208);
+    background: rgb(195, 172, 208, 0.5);
     border-radius: 15px;
     font-size: 18px;
     letter-spacing: 2px;
