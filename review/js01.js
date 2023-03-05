@@ -139,7 +139,8 @@ function sayHello(nameOfPerson, age) {
 
 }
 
-//function에 값이나 데이터를 입력하는(argument) 방식 (console.log(argument) 생각하기
+
+//function에 값,이나 데이터를 입력하는(argument) 방식 (console.log(argument) 생각하기
 sayHello("young", 28);
 sayHello("winter", 1);
 
@@ -177,10 +178,93 @@ animal.sayHi("suuuuu");
 
 
 
+//return
+
+const age = 28;
+
+function calculatorUsaAge(num) {
+    return num - 2;
+};
+
+const usaAge = calculatorUsaAge(28);
+
+console.log(usaAge);
+
+
+
+
+const calculator = {
+    plus : function (a,b) {
+       return a+b;
+       /*return을 하고 나면 그뒤의 코드는 작동하지 않음. 
+        return하는 순간 function 종료되기 때문. 
+       */
+      console.log("hello") 
+    },
+    subtract : function (a,b) {
+        return  a-b;
+    },
+    divide : function (a,b) {
+        return  a/b;
+    },
+    multiply : function (a,b) {
+        return a*b;
+    },
+       
+};
+
+
+//console.log로 단순히 콘솔에 결과를 보기 위할때완 다르게 변수에 값이 있음. -> 상호작용 가능.
+const plusResult = calculator.plus(10,3);
+const subtractResult = calculator.subtract(plusResult,1);
+const divideResult = calculator.divide(subtractResult, 4);
+const multiplyResult = calculator.multiply(plusResult,divideResult);
 
 
 
 
 
+//조건문을 활용해 음주 가능 계산기 만들기. 
 
 
+/*string은 문자라 값을 비교할 수 없으니, parseInt function -> number로 type 변경 
+
+    function은 내부(1) 외부(2) 순서로 실행. 
+    -----> (2)parseInt((1)prompt("How old are you?"));
+*/
+const aGe = parseInt(prompt("How old are you?"));
+
+//typeof -> value type을 알 수 있는 프로퍼티  
+console.log(typeof aGe);
+
+
+//isNaN -> 하나의 argument(인자)를 주면 NUMBER인지 아닌지 boolean으로 반환(return)해줌
+console.log(isNaN(aGe));
+
+
+/**
+   조건문
+   if (조건문) {
+     조건이 참일 때 실행할 코드
+    } else {
+     조건이 거짓일 때 실행할 코드 }
+
+ */
+
+     /*
+if(isNaN(aGe)) {
+    console.log("나이 좀 써라 이눔아");
+} else {
+    console.log("ㄳㄳ");
+}*/
+
+
+if(isNaN(aGe)) {
+    alert("나이(숫자)를 적어주세요.");
+}else if (aGe < 18) {
+    alert("성인이 된 후에 접속해주세요.");
+}else if (aGe >= 18 && aGe <= 65) {
+    alert("Enjoy");
+}else {
+    alert("지나친 음주는 건강에 좋지 않습니다.");
+}
