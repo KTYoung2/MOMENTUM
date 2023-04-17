@@ -1,4 +1,7 @@
 const clock = document.querySelector("#clock");
+const today = document.querySelector("#today");
+
+
 
 
 
@@ -23,7 +26,14 @@ function getClock(){
 }
 
 
+function getDate(){
+    const date = new Date();
+    today.innerText = `Today Is 
+                       ${date.getDate()}일 ${date.getMonth()+1}월  ${date.getFullYear()}년`;    
+}
 
+
+getDate();
 getClock();
 //getClock(); 호출을 먼저 해줘야 현재 시간이 바로 보임. 호출 안 하면 00:00:00 -> 현재시간 이렇게 보임. 
 setInterval(getClock, 1000);
@@ -31,3 +41,4 @@ setInterval(getClock, 1000);
 ex)서버를 확인한다던가, 2초마다 주식시장 api를 확인해야한다던가
 setInterval(실행function, 시간ms);
 */
+
