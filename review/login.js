@@ -20,7 +20,7 @@ function onLoginSub(event) {
     //user정보 userName 변수에 저장
     localStorage.setItem(USERNAME_KEY , userName);
     /* user정보 받아서 저장하기. 
-    localStorage -> window 브라우저에서 제공하는 작은 db 
+    localStorage -> window 브라우저에서 제공하는 db 같은 api 
     setItem(key,value)
     */
     paintingGreeting(userName);
@@ -40,6 +40,7 @@ function paintingGreeting(username){
 
 //user 정보 저장 유무 체크                
 const savedUsername = localStorage.getItem(USERNAME_KEY);
+                        //localStorage 저장된 user정보 가져오기 getItem();
 
 if(savedUsername === null){
    loginForm.classList.remove(HIDDEN_CLASSNAME); 
