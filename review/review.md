@@ -1,3 +1,4 @@
+
 1.javascript on the browser
 
 html의 elements들은 javascript를 통해 변경하고 읽을 수 있음.
@@ -75,5 +76,105 @@ function handleResize(){
 
 
 window.addEventListener("resize", handleResize);
+
+
+
+
+
+
+
+
+
+//javascript에서 html element를 가져오는 법
+const title = document.querySelector(".hello h1");
+
+
+
+//elememts에서 class name을 변경, 제거, 추가. 
+기본적인 효과(색변경, 스타일 등등)은 css에서 하고 동작하는 걸 js에서 조작하기 !
+function handleClick() {
+    //오류방지 string 변수에 저장하기 
+    const clickedClass = "clicked";
+                        (css className)
+    //js로 html class name 추가하기
+    if(title.className === clickedClass){
+        title.className = "";
+    } else {
+        title.className = clickedClass;
+    }
+
+};
+
+
+title.addEventListener("click", handleClick);
+
+
+
+
+
+ 
+
+- classList 
+
+: element의 class 내용물을 조작하는 것을 허용한다.
+
+html class name이 부여된 element에 js에서 다른 className을 
+추가하고 싶다면? (기존의 html 클래스가 사라지않게하기)
+
+<div class="hello">  
+        <h1 class="sexy-font">Click ME !</h1>
+    </div>
+
+function handleClick() {
+    const clickedClass = "clicked";
+    //만약 타이틀 클레스 네임에 "clicked"가 포함이 되어 있다면
+    if(title.classList.contains(clickedClass)){
+        title.classList.remove(clickedClass);
+        타이틀 클레스네임 "clicked" 지우고 
+    } else {
+        title.classList.add(clickedClass);
+    } 아니라면 타이틀 클레스 네임에 "clicked"를 추가해라
+
+};
+
+
+하지만, 이것도 더욱 편리하게 만들 수 있다.
+바로바로 toggle 메소드를 이용하는 것!!!!!!
+
+classList - toggle
+toggle은 클래스의 유무를 체크해서 없으면 add, 있으면 remove를 자동으로 시켜준다.
+
+
+function handleClick() {
+    title.classList.toggle("clicked");
+};
+
+
+
+
+
+classList - Methods
+
+add(String)
+지정한 클래스 값을 추가한다.
+만약 추가하려는 클래스가 이미 존재한다면 무시.
+ 
+
+remove(String)
+지정한 클래스 값을 제거한다.
+존재하지 않는 클래스라면? 에러 발생 X
+ 
+
+contains(String)
+지정한 클래스 값이 존재하는지 확인.
+true, false 값을 반환.
+ 
+
+replace(old, new)
+old class를 new class로 대체
+ 
+
+item(Number)
+인덱스 값을 활용하여 클래스 값을 반환
 
 
