@@ -178,3 +178,115 @@ item(Number)
 인덱스 값을 활용하여 클래스 값을 반환
 
 
+//login
+
+-유저 정보 받아내고 저장하기
+
+
+
+const loginInput = document.querySelector("#login-form input");
+const loginBtn = document.querySelector("#login-form button");
+
+
+
+function handleLoginBtn () {
+    //.value input에 입력된 값을 가져오는 프로퍼티
+    const username = loginInput.value;
+    if(username === ""){
+        alert("이름적어");
+        //.length => String 길이 구하는 프로퍼티
+    } else if(username.length > 15) {
+        alert("이름 길어");
+    }
+};
+
+
+loginBtn.addEventListener("click", handleLoginBtn);
+
+js로 user 유효성 검사를 해줄 수 있지만, html에서도 가능하니
+1차적으로 그냥 html에서 설정해주는 것이 편함
+
+   <form id="login-form">    
+        <input required 
+               maxlength="15" 
+               type="text" 
+               placeholder="what's your name" />
+        <input type="submit" value="Log in">
+    </form>
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+
+
+1. 유저정보 받아내기
+
+
+/*
+
+addEventListener의 function의 
+\function onLoginSubmit (event)=> 첫번째 인자에는 
+발생된 event의 대한 정보를 제공해줌.js에서 ! 
+그래서 나는 그 정보를 받아올 공간만 만들어주면 된다.
+
+*/
+
+const HIDDEN_CLASSNAME = "hidden";
+
+function onLoginSubmit (event) {
+    //preventDefault() event의 디폴트 행동이 발생되지 않도록 막는것.
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+};
+
+
+/*
+    html form안에 있는 input submit은 자동으로 새로고침 되기 떄문에
+    유저 네임을 받자마자 저장하기 어려움. 때문에 click event가 아니라 
+    "submit"을 멈추는 event 필요함. (엔터를 누르거나, 버튼을 클릭할 떄 발생)
+*/
+
+loginForm.addEventListener("submit", onLoginSubmit);
+
+
+2.유저네임 저장, view
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit (event) {
+    //preventDefault() event의 디폴트 행동이 발생되지 않도록 막는것.
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    /*localStorage => 브라우저에서 제공해주는 걍 작은 db라고 생각하면됨.
+        저장하기 .setItem("key", value);
+    */
+    localStorage.setItem(USERNAME_KEY, username);
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+};
+
+
+
+/*
+    html form안에 있는 input submit은 자동으로 새로고침 되기 떄문에
+    유저 네임을 받자마자 저장하기 어려움. 때문에 click event가 아니라 
+    "submit"을 멈추는 event 필요함. (엔터를 누르거나, 버튼을 클릭할 떄 발생)
+*/
+
+
+//유저 네임 유무 확인
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername === null){
+    loginForm.classList.remove("hidden");
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    greeting.classList.remove("hidden");
+    greeting.innerText = `Hello ${savedUsername}`;
+}

@@ -2,43 +2,15 @@
 const title = document.querySelector(".hello h1");
 
 
-
+//elememts에서 class name을 변경, 제거, 추가. 
 function handleClick() {
-    title.style.color = "white";
-};
-
-function handleMouse(){
-    title.innerText = "mouse is here";
-};
-
-function handleLeave() {
-    title.innerText = "마우스 떠남요";
+    title.classList.toggle("clicked");
 };
 
 
-function handleResize(){
-    document.body.style.backgroundColor = "tomato";
-};
 
-function handelCopy() {
-    alert("뭘 뽀려가시나요?");
-};
-
-
-function handleOff(){
-    alert("SOS!!!!");
-};
-
-function handleOn(){
-    alert("Good");
-};
 
 title.addEventListener("click", handleClick);
-title.addEventListener("mouseenter", handleMouse);
-title.addEventListener("mouseleave", handleLeave);
 
 
-window.addEventListener("resize", handleResize);
-window.addEventListener("copy", handelCopy);
-window.addEventListener("offline", handleOff);
-window.addEventListener("online", handleOn);
+
