@@ -290,3 +290,37 @@ if(savedUsername === null){
     greeting.classList.remove("hidden");
     greeting.innerText = `Hello ${savedUsername}`;
 }
+
+
+
+
+
+=========================================================================
+
+
+5.clock
+
+
+function sayHello(){
+    console.log("hello");
+}
+
+    //호출 function , 발생시간
+setInterval(sayHello, 5000);
+setInterval 함수 -> 매시간 뭔가를 발생시켜야 할 때 쓰는 함수 
+
+
+
+
+const clock = document.querySelector("#clock");
+
+function getClock(){
+    JS Date Object
+    const date = new Date();
+    clock.innerText = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
+}
+
+
+//브라우저를 켜자마자 시계가 출력돼야 하는데, 1초 기다렸다가 보이니까 getClock(); 함수 즉시 실행
+getClock();
+setInterval(getClock, 1000);

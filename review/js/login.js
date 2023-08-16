@@ -24,10 +24,13 @@ function onLoginSubmit (event) {
         저장하기 .setItem("key", value);
     */
     localStorage.setItem(USERNAME_KEY, username);
+    paintGreeting(username);
+};
+
+function paintGreeting(username){
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 };
-
 
 
 /*
@@ -41,9 +44,8 @@ function onLoginSubmit (event) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if(savedUsername === null){
-    loginForm.classList.remove("hidden");
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    greeting.classList.remove("hidden");
-    greeting.innerText = `Hello ${savedUsername}`;
-}
+        paintGreeting(savedUsername);
+};
